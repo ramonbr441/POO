@@ -19,17 +19,25 @@ public class App {
 //        System.out.println("capacete aberto?"  + malvado.isAbreCapcete() );
 
 
-        Caneta c = new Caneta();
+//        Caneta c = new Caneta();
+//
+//        c.setCor("verde");
 
-        c.setCor("verde");
+//
+//        Pessoa r = new Pessoa("1214563804095", "ramon", "ramon@emial.com");
+//
+//
+//
+//        System.out.println(r);
+//
+//        Caneta bic = new Caneta("azul", 100);
+//
+//        Caneta pilot = new Caneta("preta");
 
-        Pessoa takavara = new Pessoa();
-        takavara.setCpf("121.560.649.46");
-        takavara.setEmail("taka@gmail.com");
-        takavara.setNome("takavara silva de sousa");
+        Carro f1 = new Carro(-50);
 
+        System.out.println(f1.acelerar(-60));
 
-        System.out.println(takavara);
 
 
 
