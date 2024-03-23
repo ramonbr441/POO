@@ -5,6 +5,21 @@ public class App {
 
     public static void main(String[] args) {
 
+
+
+        Carro f1 = new Carro(-50);
+
+        System.out.println(f1.acelerar(-60));
+
+
+
+
+    }
+
+
+}
+
+
 //        Buzz b = new Buzz();
 //
 //
@@ -33,15 +48,3 @@ public class App {
 //        Caneta bic = new Caneta("azul", 100);
 //
 //        Caneta pilot = new Caneta("preta");
-
-        Carro f1 = new Carro(-50);
-
-        System.out.println(f1.acelerar(-60));
-
-
-
-
-    }
-
-
-}
