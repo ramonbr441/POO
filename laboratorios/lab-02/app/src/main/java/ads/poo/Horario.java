@@ -6,12 +6,19 @@ public class Horario {
     private int min;
     private int seg;
 
-    private String [] vetorUnidades = {"zero","uma","duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove", "vinte" };
-    private String [] vetorDezenas = {"zero","um","dois","trinta", "quarenta", "cinquenta"};
+
 
     public String horarioExtenso (){
-        return vetorUnidades[this.hora]+" horas " + vetorDezenas[this.min] +" minutos "+ vetorDezenas[this.seg] + " segundos ";
 
+        String [] vetorHora = {"zero","uma","duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove", "vinte" };
+        String [] vetorMin = {"zero","um","dois","trinta", "quarenta", "cinquenta"};
+       StringBuilder sb = new StringBuilder();
+       sb.append(vetorHora[this.hora]);
+       sb.append("hora(s)");
+       sb.append((vetorMin[this.min]));
+       sb.append("minuto(s)");
+
+        return sb.toString();
 
     }
     public Horario(int hora, int min, int seg){
@@ -64,6 +71,14 @@ public class Horario {
         }else{
             return false;
         }
+    }
+
+    public int emSegundos(){
+        return this.seg + this.min * 60 + this.hora * 60 *60;
+    }
+
+    public int difrenca(Horario outro){
+        return  Math.abs(this.emSegundos() - outro.emSegundos());
     }
 
 
