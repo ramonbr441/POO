@@ -64,6 +64,43 @@ public class App {
     }
 
     private boolean editar() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("digite a matricula do aluno o qual deseja mudar as informações: ");
+        String e = teclado.nextLine();
+        if(this.bancoDeDados.containsKey(e)){
+            Aluno alunoASerEditado = bancoDeDados.get(e);
+            System.out.println("digite o novo nome do aluno ou pressione enter para manter");
+            String nome = teclado.nextLine();
+            if (nome.length() > 0){
+                alunoASerEditado.setNome(nome);
+            }
+            System.out.println("digite o novo curso do aluno ou pressione enter para manter");
+            String curso = teclado.nextLine();
+            if (curso.length() > 0){
+                alunoASerEditado.setCurso(curso);
+            }
+            System.out.println("digite o novo contato do aluno ou pressione enter para manter");
+            String telefone = teclado.nextLine();
+            if (telefone.length() > 0){
+                alunoASerEditado.setTelefone(telefone);
+            }
+            System.out.println("digite o novo email do aluno ou pressione enter para manter");
+            String email = teclado.nextLine();
+            if (email.length() > 0){
+                alunoASerEditado.setEmail(email);
+            }
+            System.out.println("digite a nova data de nascimento ou pressione enter para manter");
+            String DataNascimento = teclado.nextLine();
+            if(DataNascimento.length() > 0 ){
+
+                DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                LocalDate data = LocalDate.parse(DataNascimento, formato);
+                alunoASerEditado.setDataNascimento(LocalDate.parse(DataNascimento,formato));
+            }
+
+        }else{
+            System.out.println("aluno não encontrado");
+        }
         return false;
 
     }
@@ -110,10 +147,10 @@ public class App {
 
          switch (opcao){
              case 1-> app.cadastrar();
-             case 2 -> System.out.println("editando");
+             case 2 -> app.editar();
              case 3 -> app.excluir();
              case 4 -> app.listarDadosAlunos();
-             case 5 -> System.out.println("listando alunos ");
+             case 5 -> app.listarAlunos();
              case 6 -> System.out.println("saindo");
              default -> System.out.println("opção invalida");
          }
