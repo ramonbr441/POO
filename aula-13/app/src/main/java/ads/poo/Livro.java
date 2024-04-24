@@ -32,7 +32,22 @@ public class Livro {
         this.isbn = isbn;
     }
 
+    public boolean addAutor(Autor a) {
+        return this.autores.add(a);
+    }
+
     public String getIsbn() {
         return isbn;
+    }
+
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+        for (Autor autor : this.autores) {
+
+            sb.append(autor);
+        }
+        return String.format("ISBN: %s, TITULO: %s, PRECO: %d,autores:\n%s", isbn, titulo, preco,sb );
     }
 }
