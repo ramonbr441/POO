@@ -3,17 +3,51 @@
  */
 package ads.poo;
 
+import ads.poo.produtos.Celular;
 import ads.poo.produtos.Dimensao;
 import ads.poo.produtos.SemFio;
 import ads.poo.produtos.Telefone;
 
 public class App {
     public static void main(String[] args) {
-        Telefone a = new Telefone(10542,"1","nike",10.0,new Dimensao(1.0,5.0,3));
-        Telefone r = new SemFio(45645,"78","adidas",10.0,new Dimensao(5,3,4),20,3,100);
-        System.out.println(a.imprimirDados());
-        System.out.println(r.imprimirDados());
+//        Telefone a = new Telefone(10542,"1","nike",10.0,new Dimensao(1.0,5.0,3));
+//        Telefone r = new SemFio(45645,"78","adidas",10.0,new Dimensao(5,3,4),20,3,100);
+//        System.out.println(a.imprimirDados());
+//        System.out.println(r.imprimirDados());
+
+//        Telefone t ;
+//        SemFio s;
+//        Celular c;
+//        Celular d;
+
+        Telefone[] r = new Telefone[4];
+
+        r[0] = new Telefone(11, "11112","nik",30.0, new Dimensao(1,2,3));
+        r[1] = new Celular(11,"11112","ads",30, new Dimensao(1,2,3),13,3,100,"ios");
+        r[2] = new Celular(11,"11112","nike",30, new Dimensao(1,2,3),13,3,100,"ios");
+        r[3] = new SemFio(11,"11112","adis",30, new Dimensao(1,2,3),13,3,100);
+
+        for(Telefone tel : r){
+            System.out.println(tel.imprimirDados());
+
+            if(tel instanceof Celular){
+                System.out.println(((Celular) tel).imprimirDados());
+            }
+        }
+//        t = new Celular(0145,"11112","nike",30, new Dimensao(1,2,3),13,3,100,"ios");
+//        t.imprimirDados();
+//        Celular f = new Celular(0145,"11112","nike",30, new Dimensao(1,2,3),13,3,100,"ios");
+////        c.setSistemaOperacional("windows");
+//
+//        ((Celular)t).setSistemaOperacional("windows");
+//
+//        d = (Celular) t;
     }
+
+
+
+
+
 
 
 }
